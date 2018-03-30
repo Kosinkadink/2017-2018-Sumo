@@ -22,15 +22,4 @@ class ScrapMotorDualPWM: public ScrapMotorInterface {
 		virtual void stop();
 };
 
-
-class SumoWedge {
-	private:
-		int SWITCH_LEFT;
-		int SWITCH_RIGHT;
-	public:
-		SumoWedge(int SwitchL, int SwitchR) { SWITCH_LEFT = SwitchL; SWITCH_RIGHT = SwitchR; initWedge(); };
-		void initWedge() { pinMode(SWITCH_LEFT,INPUT); pinMode(SWITCH_RIGHT,INPUT); };
-		bool getPressedState() { return digitalRead(SWITCH_LEFT) || digitalRead(SWITCH_RIGHT); }; 
-};
-
 #endif
